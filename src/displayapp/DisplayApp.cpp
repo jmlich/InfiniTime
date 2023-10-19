@@ -1,6 +1,7 @@
 #include "displayapp/DisplayApp.h"
 #include <libraries/log/nrf_log.h>
 #include "displayapp/screens/HeartRate.h"
+#include "displayapp/screens/FindMyPhone.h"
 #include "displayapp/screens/Motion.h"
 #include "displayapp/screens/Timer.h"
 #include "displayapp/screens/Alarm.h"
@@ -536,6 +537,9 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
       break;
     case Apps::HeartRate:
       currentScreen = std::make_unique<Screens::HeartRate>(heartRateController, *systemTask);
+      break;
+    case Apps::FindMyPhone:
+      currentScreen = std::make_unique<Screens::FindMyPhone>(systemTask->nimble().immediateAlertService());
       break;
     case Apps::Metronome:
       currentScreen = std::make_unique<Screens::Metronome>(motorController, *systemTask);

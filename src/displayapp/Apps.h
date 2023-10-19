@@ -20,6 +20,7 @@ namespace Pinetime {
       Paddle,
       Twos,
       HeartRate,
+      FindMyPhone,
       Navigation,
       StopWatch,
       Metronome,
