@@ -539,7 +539,7 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
       currentScreen = std::make_unique<Screens::HeartRate>(heartRateController, *systemTask);
       break;
     case Apps::FindMyPhone:
-      currentScreen = std::make_unique<Screens::FindMyPhone>(systemTask->nimble().immediateAlertService());
+      currentScreen = std::make_unique<Screens::FindMyPhone>(systemTask->nimble().immediateAlertClient());
       break;
     case Apps::Metronome:
       currentScreen = std::make_unique<Screens::Metronome>(motorController, *systemTask);
